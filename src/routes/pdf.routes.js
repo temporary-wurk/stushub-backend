@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const { getallpdf, searchpdf } = require('../controllers/pdf.controller');
+const { getallpdf, searchpdf, downloadpdf } = require('../controllers/pdf.controller');
 
 router.get('/', getallpdf);
 router.get('/search/:pdfname', searchpdf);
+router.get('/download/:id', downloadpdf);
+
 
 
 

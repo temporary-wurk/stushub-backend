@@ -4,6 +4,7 @@ app.use(express.json());
 
 
 const pdfrouter = require('./routes/pdf.routes');
+const emailrouter = require('./routes/email.routes');
 
 
 app.get('/', (req, res) => {
@@ -12,6 +13,9 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/pdf', pdfrouter);
+app.use('/api/email', emailrouter);
+
+
 
 
 

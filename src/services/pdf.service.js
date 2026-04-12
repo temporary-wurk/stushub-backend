@@ -1,25 +1,12 @@
-const pdfmodel = require("../models/pdf.model");
+const pdfmodel = require("../models/pdfs.model");
 
 module.exports.getallpdf = async () => {
     const pdf = await pdfmodel.find();
     return pdf;
 }
 
-module.exports.searchpdf = async (pdfname) =>{
-    const pdf = await pdfmodel.findOne({ pdfname });
+module.exports.searchpdf = async (subject, type, section) => {
+    const pdf = await pdfmodel.findOne({ subject, type, section });
     return pdf;
 }
 
-module.exports.createpdf = async ({pdfname,description,fileurl,reference}) => {
-    if (!pdfname || !description || !fileurl || !reference) {
-        throw new Error("All fields are required");
-    }
-
-    const existingpdf = await pdfmodel.findOne({ pdfname });
-    if (existingpdf) {
-        throw new Error("pdf already exists");
-    }
-    
-    const newpdf = await pdfmodel.create({ pdfname, description, fileurl, reference });
-    return newpdf;
-}
