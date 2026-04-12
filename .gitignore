@@ -1,6 +1,4 @@
 .env
 node_modules/
 test_api.js
-package-lock.json
-package.json
 README.md

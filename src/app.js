@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-require('dotenv').config();
+
 
 const cors = require('cors');
 app.use(cors());
@@ -18,11 +18,6 @@ app.get('/', (req, res) => {
 app.use('/api/pdf', pdfrouter);
 app.use('/api/email', emailrouter);
 
-const PORT = 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port http://localhost:${PORT}`);
-});
 
 
 
