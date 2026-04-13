@@ -3,7 +3,6 @@ const app = require('./src/app');
 const db_connection = require('./src/config/db');
 
 
-const PORT = 5000;
 
 const startServer = async () => {
     try {
@@ -12,7 +11,7 @@ const startServer = async () => {
       console.log("MongoDB connection established successfully.");
       console.log("Starting server...");
       app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.log(`Server is Started And Running`);
       });
     } catch (error) {
       console.error("Failed to connect to MongoDB:");
