@@ -6,7 +6,7 @@ const getallpdf = async (req, res) => {
         res.status(200).json(pdf);
     }
     catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: "Error on getting pdf" });
     }
 }
 
@@ -17,7 +17,7 @@ const searchpdf = async (req, res) => {
         res.status(200).json(pdf);
     }
     catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: "Error on searching pdf" });
     }
 }
 
@@ -31,7 +31,7 @@ const downloadpdf = async (req, res) => {
         res.download(pdf.fileUrl);
     }
     catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: "Error on downloading pdf" });
     }
 }
 

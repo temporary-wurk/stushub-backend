@@ -6,15 +6,14 @@ const sendEmail = async (req, res) => {
     const finalText = text || "No message body provided.";
 
     if (!email) {
-        return res.status(400).send('Email parameter is required.');
+        return res.status(400).json({ message: 'Email parameter is required.' });
     }
     try {
         await emailsender(email, finalSubject, finalText);
-        res.send('Email sent successfully!');
+        res.status(200).json({ message: 'Email sent successfully!' });
     } catch (error) {
-        console.error('Error sending email:', error);
-        const message = error.message || 'Failed to send email.';
-        res.status(500).send(`Failed to send email: ${message}`);
+        console.error('Error sending email:');
+        res.status(500).json({ message: 'Failed to send email' });
     }
 };
 
