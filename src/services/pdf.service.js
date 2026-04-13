@@ -10,3 +10,7 @@ module.exports.searchpdf = async (subject, type, section) => {
     return pdf;
 }
 
+module.exports.getpdfbyid = async (id) => {
+    const pdf = await pdfmodel.findById(id);
+    return pdf;
+}
