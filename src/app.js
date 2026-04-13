@@ -14,9 +14,6 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Student Management System');
 });
 
-app.get('/*', (req, res) => {
-  res.status(404).redirect('/'); 
-});
 
 
 app.use('/api/pdf', pdfrouter);
